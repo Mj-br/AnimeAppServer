@@ -36,12 +36,13 @@ fun Route.getAllHeroesRoute(
                     message = emptyList<Unit>()
                 )
             return@get
-        } else {
+        }
+
+            //Si no está vacía la lista, entonces manda la lista de heroes
             call.respond(
                 status = HttpStatusCode.OK,
                 message = heroList
             )
         }
-    }}
-
+    }
 }
