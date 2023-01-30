@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 //-------------------------------------------- Agregado del proyecto del profesor
 
 val ktor_version: String by project
@@ -50,4 +52,13 @@ dependencies {
     implementation("io.insert-koin:koin-core:$koin_version")
     // Koin for Ktor
     implementation ("io.insert-koin:koin-ktor:$koin_version")
+    implementation(kotlin("stdlib-jdk8"))
+}
+val compileKotlin: KotlinCompile by tasks
+compileKotlin.kotlinOptions {
+    jvmTarget = "1.8"
+}
+val compileTestKotlin: KotlinCompile by tasks
+compileTestKotlin.kotlinOptions {
+    jvmTarget = "1.8"
 }
